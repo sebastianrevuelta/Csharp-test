@@ -6,11 +6,11 @@ variables:
 
 jobs:
 - job: Semgrep_Full_Scan
-  condition: eq(variables['Build.SourceBranchName'], 'master')
+  condition: eq(variables['Build.SourceBranchName'], 'main')
   steps:
   - template: templates/full_scan_semgrep.yml
 
 - job: Semgrep_PR_Scan
-  condition: ne(variables['Build.SourceBranchName'], 'master')
+  condition: ne(variables['Build.SourceBranchName'], 'main')
   steps:
   - template: templates/pr_scan_semgrep.yml
