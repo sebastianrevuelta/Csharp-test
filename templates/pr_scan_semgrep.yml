@@ -1,7 +1,7 @@
 steps:
 - checkout: self
   clean: true
-  fetchDepth: 10000
+  fetchDepth: 20
 - script: |
     echo "Pull Request Scan from branch: $(Build.SourceBranchName)"
     git fetch origin main:origin/main
