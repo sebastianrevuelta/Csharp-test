@@ -11,3 +11,10 @@ steps:
   env:
    SEMGREP_PR_ID: $(System.PullRequest.PullRequestNumber)
    SEMGREP_BASELINE_REF: 'origin/main'
+   
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # this is inline code
+      env | sort
